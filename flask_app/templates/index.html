@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Flask</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>All Users</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Created At</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for user in all_users %}
-                <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.first_name }} {{ user.last_name }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.created_at }}</td>
-                    <td>
-                        <a href="/users/{{ user.id }}">Show</a>
-                        <a href="/users/{{ user.id }}/edit">Edit</a>
-                        <a href="/delete/{{ user.id }}">Delete</a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="/users/new">Add A New User</a>
+    <div>
+        <div style = "display:inline-block; width: 20%">
+            <h1>New Dojo</h1>
+            <form action="/dojos/creation" method="POST">
+                <label>
+                    Name:
+                    <input type="text" name="name">
+                </label>
+                <div>
+                    <input type="submit" value="Create">
+                </div>
+            </form>
+        </div>
+        <div style = "display:inline-block">
+            <table style="margin-top: 50px; border: 2px solid black">
+                <thead>
+                    <td>Dojos</td>
+                </thead>
+                <tbody>
+                        {% for dojo in dojos %}
+                            <tr>
+                                <td><a href="/dojos/{{dojo.id}}">{{ dojo.name}}</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+            <a href="/ninjas">Add Ninja</a>
+        </div>
+    </div>
 </body>
 </html>

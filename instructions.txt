@@ -3,3 +3,15 @@ Change the version in the pipfile if it doesn't match.
 In the terminal from the directory level of server.py run"
 python3 -m pipenv install
 or your computer's equavilant 
+
+# checklist
+/ 1. Class Ninja with dojo id
+/ 2. Class Dojo with empty list of ninjas
+/ 3. list of all ninjas for one dojo SQL
+/ 4. All dojos page + create form
+/ 5. Create new dojo route
+/ 6. Dojo create/insert SQL
+/ 7. New ninja page + form
+/ 8. Ninja Create/insert SQL
+/ 9. One dojo page + list of ninjas
+/ 10. Retrieve all ninjas from on dojo SQL

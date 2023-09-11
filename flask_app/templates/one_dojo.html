@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{selected_dojo.name}} Ninjas</h1>
+    <table>
+        <thead>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Age</td>
+        </thead>
+        {% if selected_dojo.ninjas %}
+        <tbody>
+            {% for one_ninja in selected_dojo.ninjas %}
+                <tr>
+                    <td>{{one_ninja.first_name}}</td>
+                    <td>{{one_ninja.last_name}}</td>
+                    <td>{{one_ninja.age}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+    </table>
+    <a href="/">Home</a>
+</body>
+</html>

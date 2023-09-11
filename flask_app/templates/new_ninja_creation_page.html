@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>New Ninja</h1>
+    <form action="/create/ninja" method="POST">
+        <div>
+            <label>
+                First Name:
+                <input type="text" name="first_name">
+            </label>
+        </div>
+        <div>
+            <label>
+                Last Name:
+                <input type="text" name="last_name">
+            </label>
+        </div>
+        <div>
+            <label>
+                Age:
+                <input type="number" name="age">
+            </label>
+        </div>
+        <div>
+            <label for="dojo">Dojo</label>
+            <select name="dojo">
+                {% for one_dojo in all_dojos %}
+                    <option value="{{one_dojo.id}}">{{one_dojo.name}}</option>
+                {% endfor %}
+            </select>    
+        </div>
+        <div>
+            <input type="submit" value="Create">
+        </div>
+    </form>
+    <a href="/">Home</a>
+</body>
+</html>
